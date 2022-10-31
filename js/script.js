@@ -288,6 +288,67 @@ $(document).ready(function(){
         })
     }
 
+    //bank-more
+    if(document.body.clientWidth <= 1250) {
+        $('.transfer-list__item').not($('.transfer-list__item._first')).slideUp(0)
+        $('.transfer-item').children('.transfer-item__title__container._additional').slideUp(0)
+        $('.transfer-item').children('.transfer-list._additional .transfer-list__item').slideUp(0)
+
+    }
+
+    // $(window).resize(function(){
+    //     if(document.body.clientWidth <= 1250) {
+    //         $('.transfer-list__item').not($('.transfer-list__item._first')).slideUp(300)
+    //     } else {
+    //         $('.transfer-list__item').not($('.transfer-list__item._first')).slideDown(300)
+    //         $('.transfer-list__more').parent().removeClass('_opened')
+    //     }
+    // })
+
+    $('.transfer-list__more').click(function() {
+        //$(this).parent().toggleClass('_opened')
+        $(this).parent().parent().children('.transfer-list').toggleClass('_opened')
+        $(this).parent().parent().children('.transfer-item__title__container._additional').slideToggle(300)
+        //$(this).parent().children('.transfer-list__item').not($('.transfer-list__item._first')).slideToggle(300)
+        $(this).parent().parent().children('.transfer-list').children('.transfer-list__item').not($('.transfer-list__item._first')).slideToggle(300)
+    })
+
+    //bank copy in buffer
+    $('.transfer-item__btn').click(function(e) {
+        e.preventDefault()
+    })
+
+    $('.transfer-list__item').click(function(e) {
+        e.preventDefault()
+        const data = $(this).attr('data-value')
+        let message = ''
+        let popUp = null
+
+        if($('.pop-up-buffer')[0]){
+            popUp = $('.pop-up-buffer')
+            $(popUp).removeClass('_active')
+        }
+
+        navigator.clipboard.writeText(data)
+            .then(() => {
+                if(data) {
+                    message = 'Copied!'
+                } else {
+                    message = 'Oooops... something wrong'
+                }
+            })
+            .catch(() => {
+                message = 'Oooops... something wrong'
+            })
+            .finally(() => {
+                if(popUp){
+                    $(popUp).addClass('_active')
+                    $(popUp).children().children('.pop-up-buffer__text').html(message)
+                }
+                setTimeout(() => $(popUp).removeClass('_active'), 2000)
+            })
+    })
+
     //swipers
 
     //swiper-projects

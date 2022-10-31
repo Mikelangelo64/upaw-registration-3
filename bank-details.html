@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uPaw - project-one</title>
+    <title>uPaw - bank details</title>
 
     <link rel="stylesheet" href="css/reset.css">
 
@@ -24,7 +24,7 @@
 </head>
 <body>
     
-  <header class="header">
+  <header class="header _header-white">
     <div class="_container">
       <div class="header__wrapper">
 
@@ -577,6 +577,19 @@
       
     </div>
 
+    <div class="pop-up-buffer">
+      <div class="pop-up-buffer__wrapper">
+        <div class="pop-up-buffer__label">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.35703 9.20178H7.55703V5.60178H6.35703V9.20178ZM6.95703 0.201782C3.64203 0.201782 0.957031 2.88678 0.957031 6.20178C0.957031 9.51678 3.64203 12.2018 6.95703 12.2018C10.272 12.2018 12.957 9.51678 12.957 6.20178C12.957 2.88678 10.272 0.201782 6.95703 0.201782ZM6.95703 11.0018C4.31103 11.0018 2.15703 8.84778 2.15703 6.20178C2.15703 3.55578 4.31103 1.40178 6.95703 1.40178C9.60303 1.40178 11.757 3.55578 11.757 6.20178C11.757 8.84778 9.60303 11.0018 6.95703 11.0018ZM6.35703 4.40178H7.55703V3.20178H6.35703V4.40178Z" fill="#FFE600"/>
+          </svg>        
+        </div>
+        <p class="pop-up-buffer__text">
+          Oooops... something wrong
+        </p>
+      </div>
+    </div>
+
     <div class="preloader">
       <div class="preloader__wrapper">
 
@@ -597,293 +610,492 @@
     </div>
   </header>
 
-  <section class="banner-mission banner-project">
-    <div class="_container banner-mission__container">
-      <div class="banner-mission__wrapper">
-        <div class="banner-mission__content">
-          <a href="#" class="banner-mission__next">
-            Наступний проект
-            <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.96601 3.9375L-8.84091e-07 0.795938L0.75146 3.71419e-07L5 4.5L0.75146 9L-2.36452e-07 8.20406L2.96601 5.0625L3.45508 4.5L2.96601 3.9375Z" fill="white"/>
-            </svg>
+  <section class="bank-header">
+    <div class="_container">
+      <div class="bank-header__wrapper">
+        <h1 class="bank-header__title">
+          Оберіть спосіб оплати
+        </h1>
+        <div class="bank-header-list">
+          <a href="#" class="bank-header-list__item">
+            <div class="bank-header-list__label">
+              <img src="./assets/img/bank/label-bank-header-1.svg" alt="way-for-pay-1">
+            </div>
           </a>
-          <p class="banner-mission__date">
-            14.05.2022
-          </p>
-          <h2 class="title banner-mission__title">
-            Надання кормів для тварин
+          <a href="#" class="bank-header-list__item">
+            <div class="bank-header-list__label">
+              <img src="./assets/img/bank/label-bank-header-2.svg" alt="way-for-pay-2">
+            </div>
+          </a>
+          <a href="#" class="bank-header-list__item">
+            <div class="bank-header-list__label">
+              <img src="./assets/img/bank/label-bank-header-3.svg" alt="way-for-pay-3">
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="transfer">
+    <div class="_container">
+      <div class="transfer__wrapper">
+        <div class="transfer__header">
+          <h2 class="transfer__title">
+            банківським переказом
           </h2>
-          <div class="banner-mission__decription__2">
+          <div class="transfer__subtitle">
             <p>
-              Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии
+              Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах
             </p>
           </div>
-          <div class="banner-mission__money">
-            <div class="banner-mission__decription__2 _need">
-              <p>
-                Потрібно
-              </p>
+        </div>
+
+        <div class="transfer__content">
+          <div class="transfer-item">
+            <div class="transfer-item__header">
+              <div class="transfer-item__info">
+                <div class="transfer-item__flag">
+                  <img src="./assets/img/bank/label-flag-1.svg" alt="flag-1">
+                </div>
+                <div class="transfer-item__currency">
+                  <p>EURO</p>
+                </div>
+              </div>
+              <div class="transfer-item__btn__container">
+                <button class="transfer-item__btn">
+                  Copy
+                </button>
+              </div>
             </div>
-            <div class="banner-mission__decription__1 _need">
-              <p>
-                3 000 000 000₴
-              </p>
+
+            <div class="transfer-item__title__container">
+              <h3 class="transfer-item__title">
+                Company details
+              </h3>
             </div>
-            <div class="banner-mission__decription__2">
-              <p>
-                Зібрали
-              </p>
+            <div class="transfer-list">
+              <a href="#" data-value="UPAW, NGO" class="transfer-list__item _first">
+                <span class="transfer-list__title">
+                  Company Name
+                </span>
+                <span class="transfer-list__value">
+                  UPAW, NGO
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              
+              <a href="#" data-value="UA323052990000026007001018763" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  IBAN Code
+                </span>
+                <span class="transfer-list__value">
+                  UA323052990000026007001018763
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value='JSC CB "PRIVATBANK", 1D HRUSHEVSKOHO STR., KYIV, 01001, UKRAINE' class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Name of the bank
+                </span>
+                <span class="transfer-list__value">
+                  JSC CB "PRIVATBANK", 1D HRUSHEVSKOHO STR., KYIV, 01001, UKRAINE
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="PBANUA2X" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Bank SWIFT Code
+                </span>
+                <span class="transfer-list__value">
+                  PBANUA2X
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="57A Okruzhna Str., office 100, Lviv, Ukraine, 79041" class="transfer-list__item _last">
+                <span class="transfer-list__title">
+                  Company address
+                </span>
+                <span class="transfer-list__value">
+                  57A Okruzhna Str., office 100, Lviv, Ukraine, 79041
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+
+              <!-- <button class="transfer-list__more">
+                <img src="./assets/img/bank/label-more.svg" alt="more">
+              </button> -->
             </div>
-            <div class="banner-mission__decription__1">
-              <p>
-                250 000₴
-              </p>
+            
+            <div class="transfer-item__title__container _additional">
+              <h3 class="transfer-item__title">
+                Correspondent banks
+              </h3>
+            </div>
+            <div class="transfer-list _additional">
+              <a href="#" data-value="400886700401" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Account in the correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  400886700401
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="COBADEFF" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  SWIFT Code of the correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  COBADEFF
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value='Commerzbank AG, Frankfurt am Main, Germany' class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  Commerzbank AG, Frankfurt am Main, Germany
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+
+              <a href="#" data-value="400886700401" class="transfer-list__item _space">
+                <span class="transfer-list__title">
+                  Account in the correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  400886700401
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="COBADEFF" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  SWIFT Code of the correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  COBADEFF
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value='Commerzbank AG, Frankfurt am Main, Germany' class="transfer-list__item _last">
+                <span class="transfer-list__title">
+                  Correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  Commerzbank AG, Frankfurt am Main, Germany
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+
+              <button class="transfer-list__more">
+                <img src="./assets/img/bank/label-more.svg" alt="more">
+              </button>
             </div>
           </div>
-        </div>
-        <div class="banner-mission__img">
-          <img src="./assets/img/news-all/img-banner.png" alt="banner-mission">
+          <div class="transfer-item">
+            <div class="transfer-item__header">
+              <div class="transfer-item__info">
+                <div class="transfer-item__flag">
+                  <img src="./assets/img/bank/label-flag-2.svg" alt="flag-2">
+                </div>
+                <div class="transfer-item__currency">
+                  <p>USA</p>
+                </div>
+              </div>
+              <div class="transfer-item__btn__container">
+                <button class="transfer-item__btn">
+                  Copy
+                </button>
+              </div>
+            </div>
+
+            <div class="transfer-item__title__container">
+              <h3 class="transfer-item__title">
+                Company details
+              </h3>
+            </div>
+            <div class="transfer-list">
+              <a href="#" data-value="UPAW, NGO" class="transfer-list__item _first">
+                <span class="transfer-list__title">
+                  Company Name
+                </span>
+                <span class="transfer-list__value">
+                  UPAW, NGO
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              
+              <a href="#" data-value="UA323052990000026007001018763" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  IBAN Code
+                </span>
+                <span class="transfer-list__value">
+                  UA323052990000026007001018763
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value='JSC CB "PRIVATBANK", 1D HRUSHEVSKOHO STR., KYIV, 01001, UKRAINE' class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Name of the bank
+                </span>
+                <span class="transfer-list__value">
+                  JSC CB "PRIVATBANK", 1D HRUSHEVSKOHO STR., KYIV, 01001, UKRAINE
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="PBANUA2X" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Bank SWIFT Code
+                </span>
+                <span class="transfer-list__value">
+                  PBANUA2X
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="57A Okruzhna Str., office 100, Lviv, Ukraine, 79041" class="transfer-list__item _last">
+                <span class="transfer-list__title">
+                  Company address
+                </span>
+                <span class="transfer-list__value">
+                  57A Okruzhna Str., office 100, Lviv, Ukraine, 79041
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+
+              <!-- <button class="transfer-list__more">
+                <img src="./assets/img/bank/label-more.svg" alt="more">
+              </button> -->
+            </div>
+            
+            <div class="transfer-item__title__container _additional">
+              <h3 class="transfer-item__title">
+                Correspondent banks
+              </h3>
+            </div>
+            <div class="transfer-list _additional">
+              <a href="#" data-value="400886700401" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Account in the correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  400886700401
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="COBADEFF" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  SWIFT Code of the correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  COBADEFF
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value='Commerzbank AG, Frankfurt am Main, Germany' class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  Commerzbank AG, Frankfurt am Main, Germany
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+
+              <a href="#" data-value="400886700401" class="transfer-list__item _space">
+                <span class="transfer-list__title">
+                  Account in the correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  400886700401
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="COBADEFF" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  SWIFT Code of the correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  COBADEFF
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value='Commerzbank AG, Frankfurt am Main, Germany' class="transfer-list__item _last">
+                <span class="transfer-list__title">
+                  Correspondent bank
+                </span>
+                <span class="transfer-list__value">
+                  Commerzbank AG, Frankfurt am Main, Germany
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+
+              <button class="transfer-list__more">
+                <img src="./assets/img/bank/label-more.svg" alt="more">
+              </button>
+            </div>
+          </div>
+          <div class="transfer-item">
+            <div class="transfer-item__header">
+              <div class="transfer-item__info">
+                <div class="transfer-item__flag">
+                  <img src="./assets/img/bank/label-flag-3.svg" alt="flag-3">
+                </div>
+                <div class="transfer-item__currency">
+                  <p>UKRAINIAN HRYVNIA</p>
+                </div>
+                <button class="transfer-warning">
+                  <span class="transfer-warning__label">
+                    <img src="./assets/img/bank/label-warning.svg" alt="warning">
+                  </span>
+                  <span class="transfer-warning__info">
+                    <span>
+                      Оформляйте платіж за реквізитами. Після внесення номеру рахунку інші реквізити підтягуються автоматично.
+                      <strong></strong>
+                      Призначення - “Благодійний внесок”.
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div class="transfer-item__btn__container">
+                <button class="transfer-item__btn">
+                  Copy
+                </button>
+              </div>
+            </div>
+
+            <div class="transfer-item__title__container">
+              <h3 class="transfer-item__title">
+                Одержувач платежу
+              </h3>
+            </div>
+            <div class="transfer-list">
+              <a href="#" data-value="ГО САПТУ" class="transfer-list__item _first">
+                <span class="transfer-list__title">
+                  Найменування організації
+                </span>
+                <span class="transfer-list__value">
+                  ГО САПТУ
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              
+              <a href="#" data-value="44791629" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Код отримувача
+                </span>
+                <span class="transfer-list__value">
+                  44791629
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value='АТ КБ "ПРИВАТБАНК"' class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Назва банку
+                </span>
+                <span class="transfer-list__value">
+                  АТ КБ "ПРИВАТБАНК"
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="UA303052990000026009021015960" class="transfer-list__item">
+                <span class="transfer-list__title">
+                  Рахунок отримувача у форматі IBAN
+                </span>
+                <span class="transfer-list__value">
+                  UA303052990000026009021015960
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+              <a href="#" data-value="UAH" class="transfer-list__item _last">
+                <span class="transfer-list__title">
+                  Валюта
+                </span>
+                <span class="transfer-list__value">
+                  UAH
+                </span>
+                <span class="transfer-list__copy">
+                  <img src="./assets/img/bank/label-copy.svg" alt="copy">
+                </span>
+              </a>
+
+              <!-- <button class="transfer-list__more">
+                <img src="./assets/img/bank/label-more.svg" alt="more">
+              </button> -->
+            </div>
+            
+            <div class="transfer-list _additional">
+              <button class="transfer-list__more">
+                <img src="./assets/img/bank/label-more.svg" alt="more">
+              </button>
+            </div>
+          </div>
+          <div class="transfer__warning__mob">
+            <p>
+              Оформляйте платіж за реквізитами. Після внесення номеру рахунку інші реквізити підтягуються автоматично.
+              <span></span>
+              Призначення - “Благодійний внесок”.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <section class="report report-projects report-projects-one">
-    <div class="_container">
-      <div class="report__wrapper">
-        <div class="title__container report__title__container">
-          <h2 class="title report__title">Схожі проекти</h2>
-        </div>
-    
-        <div class="report-list">
-          <div class="report-list__item">
-            <a href="#" class="report-list__img">
-              <span class="report-list__img__container">
-                <img src="./assets/img/projects/img-projects-1.png" alt="projects-item">
-              </span>
-            </a>
-            <a href="#" class="report-list__text__content">
-              <span class="report-list__date">
-                14.05.2022
-              </span>
-              <span class="report-list__title">
-                Надання кормів для тварин
-              </span>
-              <span class="report-list__subtitle">
-                Потрібно
-              </span>
-              <span class="report-list__need">
-                3 000 000 000₴
-              </span>
-              <span class="report-list__more">
-                Докладніше
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.401856 5.60889L8.76873 5.60889L4.92904 1.7692L5.90186 0.796387L11.4019 6.29639L5.90186 11.7964L4.92904 10.8236L8.76873 6.98389L0.401856 6.98389L0.401856 5.60889Z" fill="#000"></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="report-list__item">
-            <a href="#" class="report-list__img">
-              <span class="report-list__img__container">
-                <img src="./assets/img/projects/img-projects-2.png" alt="report-item">
-              </span>
-            </a>
-            <a href="#" class="report-list__text__content">
-              <span class="report-list__date">
-                14.05.2022
-              </span>
-              <span class="report-list__title">
-                Надання кормів для тварин
-              </span>
-              <span class="report-list__subtitle">
-                Потрібно
-              </span>
-              <span class="report-list__need">
-                3 000 000 000₴
-              </span>
-              <span class="report-list__more">
-                Докладніше
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.401856 5.60889L8.76873 5.60889L4.92904 1.7692L5.90186 0.796387L11.4019 6.29639L5.90186 11.7964L4.92904 10.8236L8.76873 6.98389L0.401856 6.98389L0.401856 5.60889Z" fill="#000"></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="report-list__item">
-            <a href="#" class="report-list__img">
-              <span class="report-list__img__container">
-                <img src="./assets/img/projects/img-projects-3.png" alt="report-item">
-              </span>
-            </a>
-            <a href="#" class="report-list__text__content">
-              <span class="report-list__date">
-                14.05.2022
-              </span>
-              <span class="report-list__title">
-                Надання кормів для тварин
-              </span>
-              <span class="report-list__subtitle">
-                Потрібно
-              </span>
-              <span class="report-list__need">
-                3 000 000 000₴
-              </span>
-              <span class="report-list__more">
-                Докладніше
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.401856 5.60889L8.76873 5.60889L4.92904 1.7692L5.90186 0.796387L11.4019 6.29639L5.90186 11.7964L4.92904 10.8236L8.76873 6.98389L0.401856 6.98389L0.401856 5.60889Z" fill="#000"></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="report-list__item">
-            <a href="#" class="report-list__img">
-              <span class="report-list__img__container">
-                <img src="./assets/img/projects/img-projects-4.png" alt="report-item">
-              </span>
-            </a>
-            <a href="#" class="report-list__text__content">
-              <span class="report-list__date">
-                14.05.2022
-              </span>
-              <span class="report-list__title">
-                Надання кормів для тварин
-              </span>
-              <span class="report-list__subtitle">
-                Потрібно
-              </span>
-              <span class="report-list__need">
-                3 000 000 000₴
-              </span>
-              <span class="report-list__more">
-                Докладніше
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.401856 5.60889L8.76873 5.60889L4.92904 1.7692L5.90186 0.796387L11.4019 6.29639L5.90186 11.7964L4.92904 10.8236L8.76873 6.98389L0.401856 6.98389L0.401856 5.60889Z" fill="#000"></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="report-list__item">
-            <a href="#" class="report-list__img">
-              <span class="report-list__img__container">
-                <img src="./assets/img/projects/img-projects-1.png" alt="projects-item">
-              </span>
-            </a>
-            <a href="#" class="report-list__text__content">
-              <span class="report-list__date">
-                14.05.2022
-              </span>
-              <span class="report-list__title">
-                Надання кормів для тварин
-              </span>
-              <span class="report-list__subtitle">
-                Потрібно
-              </span>
-              <span class="report-list__need">
-                3 000 000 000₴
-              </span>
-              <span class="report-list__more">
-                Докладніше
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.401856 5.60889L8.76873 5.60889L4.92904 1.7692L5.90186 0.796387L11.4019 6.29639L5.90186 11.7964L4.92904 10.8236L8.76873 6.98389L0.401856 6.98389L0.401856 5.60889Z" fill="#000"></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="report-list__item">
-            <a href="#" class="report-list__img">
-              <span class="report-list__img__container">
-                <img src="./assets/img/projects/img-projects-2.png" alt="report-item">
-              </span>
-            </a>
-            <a href="#" class="report-list__text__content">
-              <span class="report-list__date">
-                14.05.2022
-              </span>
-              <span class="report-list__title">
-                Надання кормів для тварин
-              </span>
-              <span class="report-list__subtitle">
-                Потрібно
-              </span>
-              <span class="report-list__need">
-                3 000 000 000₴
-              </span>
-              <span class="report-list__more">
-                Докладніше
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.401856 5.60889L8.76873 5.60889L4.92904 1.7692L5.90186 0.796387L11.4019 6.29639L5.90186 11.7964L4.92904 10.8236L8.76873 6.98389L0.401856 6.98389L0.401856 5.60889Z" fill="#000"></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="report-list__item">
-            <a href="#" class="report-list__img">
-              <span class="report-list__img__container">
-                <img src="./assets/img/projects/img-projects-3.png" alt="report-item">
-              </span>
-            </a>
-            <a href="#" class="report-list__text__content">
-              <span class="report-list__date">
-                14.05.2022
-              </span>
-              <span class="report-list__title">
-                Надання кормів для тварин
-              </span>
-              <span class="report-list__subtitle">
-                Потрібно
-              </span>
-              <span class="report-list__need">
-                3 000 000 000₴
-              </span>
-              <span class="report-list__more">
-                Докладніше
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.401856 5.60889L8.76873 5.60889L4.92904 1.7692L5.90186 0.796387L11.4019 6.29639L5.90186 11.7964L4.92904 10.8236L8.76873 6.98389L0.401856 6.98389L0.401856 5.60889Z" fill="#000"></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-          <div class="report-list__item">
-            <a href="#" class="report-list__img">
-              <span class="report-list__img__container">
-                <img src="./assets/img/projects/img-projects-4.png" alt="report-item">
-              </span>
-            </a>
-            <a href="#" class="report-list__text__content">
-              <span class="report-list__date">
-                14.05.2022
-              </span>
-              <span class="report-list__title">
-                Надання кормів для тварин
-              </span>
-              <span class="report-list__subtitle">
-                Потрібно
-              </span>
-              <span class="report-list__need">
-                3 000 000 000₴
-              </span>
-              <span class="report-list__more">
-                Докладніше
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.401856 5.60889L8.76873 5.60889L4.92904 1.7692L5.90186 0.796387L11.4019 6.29639L5.90186 11.7964L4.92904 10.8236L8.76873 6.98389L0.401856 6.98389L0.401856 5.60889Z" fill="#000"></path>
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="report__btn__container">
-      <button class="_btn _btn-orange report__btn">
-        Завнтажити ще
-      </button>
-    </div>
-  </section>
-
-  <section class="insta insta__small">
+  <section class="insta insta__small insta__grey">
     <div class="insta__wrapper swiper">
       <div class="swiper-wrapper">
 
