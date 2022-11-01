@@ -316,6 +316,54 @@ $(document).ready(function(){
     //bank copy in buffer
     $('.transfer-item__btn').click(function(e) {
         e.preventDefault()
+        const select = $(this).attr('data-get')
+        let message = ''
+        let popUp = null
+        let items = []
+
+        if($('.pop-up-buffer')[0]){
+            popUp = $('.pop-up-buffer')
+            $(popUp).removeClass('_active')
+        }
+        if(!select) {
+            message = 'Oooops... something wrong'
+            return null
+        }
+
+        const transfer = Array.from(document.querySelectorAll('.transfer-item')).filter(item => item.dataset.item === select)
+        if(transfer.length === 0) {
+            message = 'Oooops... something wrong'
+            return null
+        }
+
+        const list = Array.from(transfer[0].children).filter(child => (
+            Array.from(child.classList).includes('transfer-list')
+        ))
+        if(list.length === 0) {
+            message = 'Oooops... something wrong'
+            return null
+        }
+
+        list.forEach(item => (
+            items.push(
+                ...Array.from(item.children).filter(child => child.localName === 'a')
+            )
+        ))
+        if(items.length === 0) {
+            message = 'Oooops... something wrong'
+            return null
+        }
+        
+        navigator.clipboard.writeText(items.map(item => item.dataset.value).join(',\n '))
+            .then(() => message = 'Copied!')
+            .catch(() => message = 'Oooops... something wrong')
+            .finally(() => {
+                if(popUp){
+                    $(popUp).addClass('_active')
+                    $(popUp).children().children('.pop-up-buffer__text').html(message)
+                }
+                setTimeout(() => $(popUp).removeClass('_active'), 2000)
+            })
     })
 
     $('.transfer-list__item').click(function(e) {

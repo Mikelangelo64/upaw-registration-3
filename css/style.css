@@ -7884,6 +7884,22 @@ a, button, .logo {
     padding: 86px 0 18px;
   }
 }
+.bank-header.list-of-needs {
+  padding: 167px 0 44px;
+}
+@media (max-width: 830px) {
+  .bank-header.list-of-needs {
+    padding: 86px 0 37px;
+  }
+}
+.bank-header.delivery {
+  padding: 167px 0 62px;
+}
+@media (max-width: 830px) {
+  .bank-header.delivery {
+    padding: 86px 0 40px;
+  }
+}
 .bank-header__title {
   text-align: left;
   font-family: "Montserrat", sans-serif;
@@ -7892,6 +7908,9 @@ a, button, .logo {
   line-height: 100%;
   color: #454545;
   margin-bottom: 38px;
+}
+.bank-header__title:last-child {
+  margin-bottom: 0;
 }
 @media (max-width: 830px) {
   .bank-header__title {
@@ -8017,6 +8036,7 @@ a, button, .logo {
 }
 
 .transfer {
+  padding-top: 0;
   padding-bottom: 73px;
   background-color: #F6F6F6;
 }

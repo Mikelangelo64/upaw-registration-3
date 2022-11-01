@@ -7570,6 +7570,22 @@ a, button, .logo{
         padding: 86px 0 18px;
     }
 
+    &.list-of-needs {
+        padding: 167px 0 44px;
+
+        @media (max-width: 830px) {
+            padding: 86px 0 37px;
+        }
+    }
+
+    &.delivery {
+        padding: 167px 0 62px;
+
+        @media (max-width: 830px) {
+            padding: 86px 0 40px;
+        }
+    }
+
     //.bank-header__wrapper 
     &__wrapper {
     }
@@ -7583,6 +7599,10 @@ a, button, .logo{
         line-height: 100%;
         color: $black;
         margin-bottom: 38px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
 
         @media (max-width: 830px) {
             max-width: 240px;
@@ -7690,6 +7710,7 @@ a, button, .logo{
 }
 
 .transfer {
+    padding-top: 0;
     padding-bottom: 73px;
     background-color: $grey;
 
