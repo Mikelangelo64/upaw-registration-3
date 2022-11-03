@@ -439,7 +439,7 @@ $(document).ready(function(){
 
             },
         }
-      });
+    });
 
     //swiper-team
 
@@ -480,7 +480,7 @@ $(document).ready(function(){
                 grabCursor: true,
             },
         }
-      });
+    });
 
     //swiper-news
     let nodeNewsSwiper = document.querySelector('.swiper.news-list')
@@ -643,4 +643,59 @@ $(document).ready(function(){
     }
 
 
+    let nodeBankSwiper = document.querySelector('.swiper.bank-list-swiper')
+    let bankSwiper = undefined
+    
+    if(nodeBankSwiper) {
+        $(window).ready(function(){
+            if (document.documentElement.clientWidth < 830) {
+                bankSwiper = new Swiper(nodeBankSwiper, {
+                    navigation: {
+                        nextEl: ".bank-list-swiper__btns__container .swiper-button-next",
+                        prevEl: ".bank-list-swiper__btns__container .swiper-button-prev",
+                    },
+                    pagination: {
+                        el: ".bank-list-swiper__pagination__container",
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                            return '<span class="' + className + '">' + (index + 1) + "</span>";
+                        },
+                    },
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    autoHeight: true,
+                    loop: false,
+                })
+            }
+        })
+    
+        $(window).resize(function(){
+            if (document.documentElement.clientWidth < 830) {
+                if(bankSwiper === undefined) {
+                    bankSwiper = new Swiper(nodeBankSwiper, {
+                        navigation: {
+                            nextEl: ".bank-list-swiper__btns__container .swiper-button-next",
+                            prevEl: ".bank-list-swiper__btns__container .swiper-button-prev",
+                        },
+                        pagination: {
+                            el: ".bank-list-swiper__pagination__container",
+                            clickable: true,
+                            renderBullet: function (index, className) {
+                                return '<span class="' + className + '">' + (index + 1) + "</span>";
+                            },
+                        },
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                        autoHeight: true,
+                        loop: false,
+                    })
+                }
+            } else {
+                if(bankSwiper) {
+                    bankSwiper.destroy()
+                    bankSwiper = undefined
+                }
+            }
+        })
+    }
 })

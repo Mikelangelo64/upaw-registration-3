@@ -38,10 +38,13 @@ body{
 //font-family: 'Montserrat', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
+//font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 //GENERAL--------------------------------------------
 $normal: 'Helvetica', sans-serif;
 $dop: 'Montserrat', sans-serif;
+$bank: 'Roboto', sans-serif;
 
 //COLORS---------------------------------------------
 $blue: #006ED2;
@@ -7592,6 +7595,7 @@ a, button, .logo{
     
     //.bank-header__title 
     &__title {
+        max-width: 461px;
         text-align: left;
         font-family: $dop;
         font-size: 32px;
@@ -7710,6 +7714,8 @@ a, button, .logo{
 }
 
 .transfer {
+    font-family: $bank;
+    font-weight: 300;
     padding-top: 0;
     padding-bottom: 73px;
     background-color: $grey;
@@ -7724,9 +7730,19 @@ a, button, .logo{
         padding: 50px 32px 58px 48px;
         background-color: #fff;
 
+        @at-root ._dark & {
+            background-color: $blue-dark;
+        }
+
         @media (max-width:830px) {
             border-radius: 10px;
             padding: 24px 10px 15px 16px;
+        }
+
+        &._dop {
+            @media (max-width:830px) {
+                padding: 24px 10px 40px 16px;
+            }
         }
     }
     
@@ -8135,7 +8151,445 @@ a, button, .logo{
     }
 }
 
+//bank-list------------------------------------------------
+.bank-list {
+    font-weight: 300;
+    font-family: $bank;
+    color: #000;
 
+    &._one {
+        //grid-template-columns: 1fr;
+    }
+
+    & + & {
+        margin-top: 57px;
+
+        @media (max-width: 830px) {
+            margin-top: 47px;
+        }
+    }
+
+    @at-root ._dark & {
+        color: #fff;
+    }
+
+    //.bank-list__wrapper 
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        //grid-template-columns: repeat(2, 1fr);
+        column-gap: 54px;
+        row-gap: 13px;
+
+        @media (max-width: 830px) {
+            // grid-template-columns: 1fr;
+            flex-wrap: wrap;
+            justify-content: unset;
+            row-gap: 24px;
+        }
+    }
+
+    //.bank-list__header 
+    &__header {
+        margin-bottom: 24px;
+
+        @media (max-width: 830px) {
+            margin-bottom: 16px;
+        }
+
+        > * {
+            text-align: left;
+            text-transform: uppercase;
+            font-family: inherit;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            color: $blue;
+
+            @media (max-width: 830px) {
+                font-size: 16px;
+            }
+        }
+
+        //.bank-list__header__title 
+        &__title {
+        }
+    }
+    
+    //.bank-list__column 
+    &__column {
+        flex: 0 0 47%;
+        width: 100%;
+        font-family: inherit;
+
+        @media (max-width: 830px) {
+            flex: 0 0 100%;
+        }
+
+        > * {
+            + * {
+                margin-top: 13px;
+
+                @media (max-width: 830px) {
+                    margin-top: 24px;
+                }
+
+                @at-root ._dark & {
+                    margin-top: 35px;
+                } 
+            }
+
+            + ._wrapped {
+                margin-top: 37px;
+
+                @media (max-width: 830px) {
+                    margin-top: 21px;
+                }
+            }
+        }
+
+        @at-root ._one & {
+            flex: 0 0 100%;
+        }
+    }
+    
+    //.bank-list__item 
+    &__item {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: inherit;
+        color: inherit;
+
+        &._big {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &._underline {
+        }
+
+        &._wrapped {
+            border: 1px solid #D9D9D9;
+            padding: 25px 16px 32px 24px;
+
+            @media (max-width: 830px) {
+                padding: 10px 15px 22px 11px;
+            }
+        }
+    }
+
+    //.bank-list__content 
+    &__content {
+        @at-root ._underline &{
+            border-bottom: 1px solid #C4C4C4;
+            padding-bottom: 13px;
+        }
+    }
+    
+    //.bank-list__title__container 
+    &__title__container {     
+        border-bottom: 1px solid #C4C4C4;   
+        padding-bottom: 11px;
+        margin-bottom: 21px;
+
+        @at-root ._dark & {
+            border: unset;
+            padding-bottom: unset;
+            margin-bottom: 27px;
+
+            @media (max-width: 830px) {
+                margin-bottom: 24px;
+            }
+        }
+
+        .transfer-warning {
+            //display: none;
+
+            //.transfer-warning__label 
+            &__label {
+            }
+            
+            //.transfer-warning__info 
+            &__info {
+                min-width: 266px;
+                transform: translate(50%, -110%);
+            }
+        }
+    }
+    
+    //.bank-list__title 
+    &__title {
+        position: relative;
+        display: inline-block;
+        text-align: left;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: 500;
+        color: inherit;
+
+        @at-root ._dark & {
+            @media (max-width: 830px) {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+    
+    //.bank-list__title__blue 
+    &__title__blue {
+        text-align: left;
+        font-family: inherit;
+        font-weight: 300;
+        font-size: inherit;
+        line-height: inherit;
+        color: $blue;
+        margin-bottom: 6px;
+
+        @media (max-width: 830px) {
+            margin-bottom: 9px;
+        }
+
+        @at-root ._dark & {
+            color: #40C3FF;
+        }
+    }
+    
+    //.bank-list__description 
+    &__description {
+        font-weight: 300;
+        font-family: inherit;
+
+        @at-root ._dark ._big & {
+            @media (max-width: 830px) {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+
+        > * {
+            font-weight: inherit;
+            + * {
+                margin-top: 13px;
+
+                @at-root ._dark & {
+                    margin-top: 32px;
+
+                    @media (max-width: 830px) {
+                        margin-top: 21px;
+                    }
+                }
+            }
+            + ul {
+                margin-top: 25px;
+            }
+            + span {
+                margin-top: 24px;
+            }
+        }
+
+        a {
+            font-weight: inherit;
+            color: $blue;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $orange;
+            }
+
+            &._maps {
+                display: flex;
+                align-items: center;
+                column-gap: 7px;
+                color: inherit;
+
+                &:hover {
+                    color: $blue;
+                }
+
+                img {
+                    flex: 0 0 12px;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            strong {
+                @media (max-width: 830px) {
+                    display: block;
+                }
+            }
+
+            @at-root ._dark & {
+                color: #40C3FF;
+            }
+        }
+
+        span {
+            position: relative;
+            display: block;
+            padding-left: 16px;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-width: 8px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        ul {
+            > * {
+                + * {
+                    margin-top: 12px;
+
+                    @at-root ._dark & {
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            li {
+                position: relative;
+                padding-left: 25px;
+
+                @at-root ._dark .bank-list__description ul li {
+                    padding-left: 17px;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 3px;
+                    height: 3px;
+                    transform: translate(11px, 250%);
+                    border-radius: 50%;
+                    background-color: #000;
+
+                    @at-root ._dark .bank-list__description ul li::before {
+                        width: 8px;
+                        height: 8px;
+                        transform: translate(0, 85%);
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bank-list-swiper {
+
+    &.swiper {
+    }
+    .swiper-wrapper {
+        @media (min-width:830px) {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 30px;
+            row-gap: 30px;
+
+            @media (min-width:1020px) {
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: 84px;
+            }
+        }
+    }
+    .swiper-slide {
+        @media (max-width:830px) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    //.bank-list-swiper__list 
+    &__list {
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000;  
+        
+        > * {
+            + * {
+                margin-top: 12px;
+            }
+        }
+    }
+
+    //.bank-list-swiper__controls 
+    &__controls {
+        position: relative;
+        margin-top: 34px;
+
+        @media screen and (min-width: 830px) {
+            display: none;
+        }
+    }
+
+    //.bank-list-swiper__pagination__container 
+    &__pagination__container {
+        position: static;
+        display: flex;
+        width: unset !important;
+        align-items: center;
+        font-family: inherit;
+        column-gap: 16px;
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 20px;
+
+        span {
+            width: unset;
+            height: unset;
+            margin: unset !important;
+            border-radius: unset;
+            background: unset;
+            opacity: unset;
+            color: #797979;
+
+            &.swiper-pagination-bullet-active {
+                color: #000;
+            }
+        }
+    }
+
+    //.bank-list-swiper__btns__container 
+    &__btns__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 18px;
+
+        .swiper-button-next, 
+        .swiper-button-prev {
+            flex: 0 0 7px;
+            position: static;
+            width: 7px;
+            height: 7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+            margin: 0;
+            
+            &:after{
+                display: none;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }   
+    }
+}
 
 
 //opora project-about
