@@ -115,11 +115,27 @@ $(document).ready(function(){
     if(isMobile.any()){
         $('.menu .menu__item__with__dop').click(function(e){
             e.preventDefault()
-            appearDropDown.call(this, e)
+            if($(this).hasClass('_focus')) {
+                appearDropDown.call(this, e)
+            }
+
+            if($(this).is(':focus')) {
+                $(this).addClass('_focus')
+                return
+            }
         })
         $('.menu-big .menu__item__with__dop').click(function(e){
             e.preventDefault()
-            appearDropDown.call(this, e)
+            if($(this).hasClass('_focus')) {
+                appearDropDown.call(this, e)
+            }
+
+            if($(this).is(':focus')) {
+                $(this).addClass('_focus')
+                return
+            }
+            console.log('click');
+            //appearDropDown.call(this, e)
         })
     }else{
         $('.menu .menu__item__with__dop').parent().hover(function(e){
@@ -130,7 +146,11 @@ $(document).ready(function(){
         })
     }
     $('.menu-big .menu__item__with__dop').focus(function(e){
+        console.log('focus');
+        //$(this).off('click')
+        $('.menu-big .menu__item__with__dop').removeClass('_focus')
         appearDropDown.call(this, e)
+        //$(this).on('click')
     })
 
     function appearDropDown(e){
@@ -142,7 +162,6 @@ $(document).ready(function(){
             $('.menu-dropdown').not($(this).next($('.menu-dropdown'))).slideUp(300)
             //return
         //}
-
         // $('.menu .menu__item__with__dop').not($(this)).removeClass('_active-dropdown')
         // $('.menu-dropdown').not($(this).next($('.menu-dropdown'))).slideUp(300)
     }
@@ -396,6 +415,90 @@ $(document).ready(function(){
                 setTimeout(() => $(popUp).removeClass('_active'), 2000)
             })
     })
+
+    //form invalid
+    $('.registration-form input').change(function(){
+        if($(this).is(':invalid')) {
+            $('.registration-form button[type=submit]').addClass('_disabled')
+        }
+
+        if($(this).is(':valid')) {
+            $('.registration-form button[type=submit]').removeClass('_disabled')
+        }
+    })
+
+    //form counter
+    //COUNTER--------
+    function makeMinus(e) {
+        e.preventDefault()
+        let $input = $(this).parent().find('input');
+        let count = parseInt($input.val()) - 1;
+        count = count < 1 ? 0 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+    }
+
+    function makePlus(e) {
+        e.preventDefault()
+        console.log(this);
+        let $input = $(this).parent().find('input');
+        console.log($input);
+
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
+    }
+
+    $('.minus').click(function(e) {
+        makeMinus.call(this, e)
+    });
+    $('.plus').click(function(e) {
+        makePlus.call(this, e)
+    });
+
+    //add more inputs
+    let counter = 1
+    $('.registration-form-more').click(addedInput)
+
+    function addedInput(e){
+        e.preventDefault()
+        const containerClass = $(e.currentTarget).parent()
+        
+        $(
+            `
+            <div class="registration-form__section _pet">
+              <div class="select__container">
+                <select name="pet-${counter}">
+                  <option value="cat">Кішка</option>
+                  <option value="dog">Пес</option>
+                </select>
+              </div>
+
+              <div class="registration-form__counter__container">
+                <p>Кількість тварини</p>
+                <div class="registration-form__counter">
+                    <a href="#" class="minus">-</a>
+                    <input type="number" required min="1" value="0">
+                    <a href="#" class="plus">+</a>
+                </div>
+              </div>
+            </div>
+            `
+        ).insertBefore($(e.currentTarget).parent())
+        
+        $('.minus').off('click')
+        $('.plus').off('click')
+        
+        $('.minus').click(function(e) {
+            makeMinus.call(this, e)
+        });
+        $('.plus').click(function(e) {
+            makePlus.call(this, e)
+        });
+
+        counter++
+    }
 
     //swipers
 
