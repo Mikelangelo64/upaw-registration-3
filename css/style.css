@@ -9075,6 +9075,10 @@ form .form-section h3.form-section__title {
   border: unset;
   padding: 10px 20px;
 }
+.registration-form button[type=submit]:hover, .registration-form button[type=submit]:focus-visible {
+  color: #fff;
+  background-color: #2A4F5E;
+}
 .registration-form button[type=submit]._disabled {
   pointer-events: none;
   background-color: #AAAAAA;

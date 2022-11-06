@@ -8943,6 +8943,12 @@ form
             border: unset;
             padding: 10px 20px;
 
+            &:hover,
+            &:focus-visible {
+                color: #fff;
+                background-color: $blue-dark;
+            }
+
             &._disabled {
                 pointer-events: none;
                 background-color: #AAAAAA;
